@@ -1,0 +1,32 @@
+FR1
+A user must be able to enter their basic information for their trip.
+
+FR2
+A user must be able to activate their location.
+
+FR3
+A user should be able to enter their country’s currency.
+
+FR4
+A user must be able to choose filters.
+
+FR5
+A user should be able to evaluate the system.
+
+FR6
+A logged in user should be able to organise a trip plan.
+
+FR7
+The system should be able to organise a trip plan.
+
+FR8
+A logged in user should be able to share an organised trip plan or a map’s shot.
+
+FR9
+A logged in user should be able to save a map.
+
+FR10
+A logged in user should be able to use a saved map offline.
+
+FR11
+A logged in user should be able to register new locations to the system database.
