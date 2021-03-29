@@ -1,0 +1,14 @@
+NFR1
+The system must be able to respond in less than 1-2 seconds.
+
+NFR2
+The system must be certified by ISO / IEC 27001.
+
+NFR3
+The system should be able to accept user’s login through Facebook or Gmail.
+
+NFR4
+The system should be able to synchronize with Google Maps and Last.fm services.
+
+NFR5
+The system should be able to ask user to accept cookies.
