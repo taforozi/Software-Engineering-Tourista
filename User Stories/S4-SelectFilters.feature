@@ -14,13 +14,13 @@ Feature: Select Filters
 	Examples: 
 	| finance           | transportation 	      | culture 	    	| health      | entertainment 	      |
 
-	| exchange offices  | Parking Lots 	          | Ancient History 	| Hospitals   | Cafés and Restaurants | 
-	| banks and ATMs    | Fuel Stations	          | Postclassic History	| Pharmacies  | Festivals             |
+	| exchange offices  | Parking Lots 	      | Ancient History 	| Hospitals   | Cafés and Restaurants | 
+	| banks and ATMs    | Fuel Stations	      | Postclassic History	| Pharmacies  | Festivals             |
 	| none              | Public Transportation   | Modern History  	| none        | none                  |
-	|		        	| Taxi Stands	          | Art Gallery	    	|	          |                       |
-	|		     	    | Car Rentals	          | Sculptures	    	|	          |                       |
-	| 		     	    |  Bike Rentals	          | Modern Art	    	|	          |                       |
-	|		    	    |	none		          | Science	        	|	          |                       |
-	|		   	        |			              | Most Popular		|	          |                       |
-	|		     	    | 			              | City’s Gems         |             |                       |
-	|                   |                         | none	            |	          |                       |
+	|	       	    | Taxi Stands	      | Art Gallery	    	|	      |                       |
+	|		    | Car Rentals	      | Sculptures	    	|	      |                       |
+	| 		    | Bike Rentals	      | Modern Art	    	|	      |                       |
+	|		    | none		      | Science	        	|	      |                       |
+	|		    |			      | Most Popular		|	      |                       |
+	|		    | 			      | City’s Gems             |             |                       |
+	|                   |                         | none	                |	      |                       |
