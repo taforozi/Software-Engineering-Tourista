@@ -3,6 +3,6 @@ This group assignment is part of the course _Software Engineering_ (8th Semester
 Me and my team decided to implement the **Tourista App**, a web application that can be used by a traveller. Based on the user's preferences, the system is able to propose a complete program and make his/hers journey enjoyable!
 
 <p align="center">
-  <img width="460" height="460" src="https://user-images.githubusercontent.com/81076999/112882928-4205a780-90d6-11eb-9e7f-3d5ebadd1990.PNG">
+  <img width="460" height="460" src="https://user-images.githubusercontent.com/81076999/112958808-7d8e8900-914b-11eb-9fde-cce865f6ee01.PNG">
 </p>
   
