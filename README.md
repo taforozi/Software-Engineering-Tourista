@@ -13,7 +13,7 @@ Functional and Non-Functional requirements of the application can be found in [T
 This folder contains Graphical User Interface mockups of Tourista App that we created on Figma platform.
 
 ## User Stories
-This folder contains 10 user stories in order to provide the necessary information about the app's functionality.
+This folder contains 10 user stories in Gherkin language, in order to provide the necessary information about the app's functionality.
 
 ## Swagger API
 The API of Tourista is available on Swaggerhub platform, [here](https://app.swaggerhub.com/apis/ThomiSEAuth/Tourista-API/1.0.0#free), and the API documentation can be found [here](https://app.swaggerhub.com/apis-docs/ThomiSEAuth/Tourista-API/1.0.0).\
