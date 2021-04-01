@@ -7,7 +7,7 @@ Me and my team decided to develop the **Tourista App**, a web application that c
 </p>
 
 ## User/System Requirements
-Functional and Non-Functional requirements of the application can be found in [Tourista_FunctionalRequirements.txt](Tourista_FunctionalRequirements.txt) and [Tourista_NonFunctionalRequirements .txt](Tourista_NonFunctionalRequirements.txt) files respectively.
+Functional and Non-Functional requirements of the application can be found in [Tourista_FunctionalRequirements.txt](Tourista_FunctionalRequirements.txt) and [Tourista_NonFunctionalRequirements.txt](Tourista_NonFunctionalRequirements.txt) files respectively.
 
 ## GUI
 This folder contains Graphical User Interface mockups of Tourista App that we created on Figma platform.
