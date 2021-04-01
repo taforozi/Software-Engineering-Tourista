@@ -1,0 +1,1292 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is an API for Tourista app \n",
+    "version": "1.0.0",
+    "title": "SE Course TOURISTA API",
+    "contact": {
+      "email": "thomi199822@gmail.com"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host": "virtserver.swaggerhub.com",
+  "basePath": "/geogiannokosta/TouristaAPI/1.0.0",
+  "tags": [
+    {
+      "name": "user",
+      "description": "Operations about user"
+    },
+    {
+      "name": "loggedInUser",
+      "description": "Operations about logged in user"
+    }
+  ],
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "paths": {
+    "/user/{userID}/trip/{tripID}": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Submit basic info",
+        "description": "FR 1 - A user must be able to submit the basic information for their trip.\n",
+        "operationId": "basicInfo",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "basicInfo",
+            "description": "Trip Model",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/basicInfo"
+            }
+          },
+          {
+            "name": "userID",
+            "in": "path",
+            "description": "User's ID",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "tripID",
+            "in": "path",
+            "description": "Trip's ID",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Info submitted successfully"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Enter currency of their country",
+        "description": "FR3 - A user should have been able to enter their country's currency\n",
+        "operationId": "enterCurrency",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "userID",
+            "in": "path",
+            "description": "User's ID",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "tripID",
+            "in": "path",
+            "description": "Trip's ID",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Currency entered successfully"
+          }
+        }
+      }
+    },
+    "/user/{userID}/gpsLocation": {
+      "put": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Enable GPS services",
+        "description": "FR2 - A user must be able to turn their GPS service on.\n",
+        "operationId": "gpslocation",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "gpsLocation",
+            "description": "GPSLocation model",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/gpsLocation"
+            }
+          },
+          {
+            "name": "userID",
+            "in": "path",
+            "description": "User's ID",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "GPS service turned on successfully",
+            "schema": {
+              "$ref": "#/definitions/gpsLocation"
+            }
+          }
+        }
+      }
+    },
+    "/user/{userID}/filters": {
+      "put": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Enter preferences",
+        "description": "FR4 - A user must be able to select among the available filter categories\n",
+        "operationId": "chooseFilters",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Filters",
+            "description": "Filters model",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Filters_1"
+            }
+          },
+          {
+            "name": "userID",
+            "in": "path",
+            "description": "User's ID",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Filter categories selected successfully",
+            "schema": {
+              "$ref": "#/definitions/inline_response_200"
+            }
+          }
+        }
+      }
+    },
+    "/user/{userID}/feedback": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Leave feedback",
+        "description": "FR5 - The user must be able to evaluate the system.\n",
+        "operationId": "feedback",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Feeback",
+            "description": "Feedback model",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Feeback"
+            }
+          },
+          {
+            "name": "userID",
+            "in": "path",
+            "description": "User's ID",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Feedback submitted successfully"
+          }
+        }
+      }
+    },
+    "/user/login": {
+      "put": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Log in to the system",
+        "description": "FR* - A user must be able to login to their account by |\nproviding their username and password.\n",
+        "operationId": "loggIn",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "User",
+            "description": "User Model",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User_1"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful log in",
+            "schema": {
+              "$ref": "#/definitions/inline_response_200_1"
+            }
+          }
+        }
+      }
+    },
+    "/user/{username}/tripPlan/{planID}": {
+      "get": {
+        "tags": [
+          "loggedInUser"
+        ],
+        "summary": "A logged in user shares their trip plan",
+        "description": "FR8 - A logged in user should be able to share a trip plan\n",
+        "operationId": "shareTrip",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "username",
+            "in": "path",
+            "description": "The username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "planID",
+            "in": "path",
+            "description": "Trip plan's ID",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "TripPlan",
+            "description": "TripPlan Model",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TripPlan_1"
+            }
+          },
+          {
+            "name": "willToShare",
+            "in": "query",
+            "description": "Whether the logged inuser wants to share a trip plan or not",
+            "required": true,
+            "type": "boolean"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Trip plan shared successfully"
+          },
+          "500": {
+            "description": "System could not share trip plan"
+          }
+        },
+        "security": [
+          {
+            "JWTbearerAuth": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "loggedInUser"
+        ],
+        "summary": "A logged in user organise their trip or asks the system to organise a trip for them",
+        "description": "FR6 - A logged in user must be able to organise their trip\nFR7 - The system should be able to organise a trip\nThe user wants to plan a trip. He has the options either to create it by himself or get it done by the system. In both cases a new trip is planned, that's why POST verb is used. \n",
+        "operationId": "organiseTrip",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "username",
+            "in": "path",
+            "description": "User wants to organise their trip",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "TripPlan",
+            "description": "TripPlan Model",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/TripPlan_2"
+            }
+          },
+          {
+            "name": "planID",
+            "in": "path",
+            "description": "Trip plan's ID",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "willToReceiveAutomaticPlan",
+            "in": "query",
+            "description": "Whether the logged in user wants to get a plan made by the system or not",
+            "required": true,
+            "type": "boolean"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Trip organised successfully",
+            "schema": {
+              "$ref": "#/definitions/TripPlan_2"
+            }
+          },
+          "400": {
+            "description": "System failed"
+          }
+        },
+        "security": [
+          {
+            "JWTbearerAuth": []
+          }
+        ]
+      }
+    },
+    "/user/{username}/map/{mapID}": {
+      "get": {
+        "tags": [
+          "loggedInUser"
+        ],
+        "summary": "Logged in user shares map",
+        "description": "FR8 - A logged in user should be able to share a capture of a map\n",
+        "operationId": "shareMap",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "username",
+            "in": "path",
+            "description": "The username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "mapID",
+            "in": "path",
+            "description": "Map's ID",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "Map",
+            "description": "Map Model",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Map_1"
+            }
+          },
+          {
+            "name": "willToShare",
+            "in": "query",
+            "description": "Whether the logged in user wants to share a map or not",
+            "required": true,
+            "type": "boolean"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/Map_1"
+            }
+          },
+          "500": {
+            "description": "System failed"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "loggedInUser"
+        ],
+        "summary": "Logged in user saves map",
+        "description": "FR9 - A logged in user should have been able to save a map\n",
+        "operationId": "saveMap",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "username",
+            "in": "path",
+            "description": "The username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "mapID",
+            "in": "path",
+            "description": "Map's ID",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "Map",
+            "description": "Map Model",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Map_2"
+            }
+          },
+          {
+            "name": "willToSave",
+            "in": "query",
+            "description": "Whether the logged in user wants to save a map or not",
+            "required": true,
+            "type": "boolean"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/Map_2"
+            }
+          },
+          "500": {
+            "description": "System failed"
+          }
+        }
+      }
+    },
+    "/user/{username}/map/{mapID}/mapUse": {
+      "get": {
+        "tags": [
+          "loggedInUser"
+        ],
+        "summary": "Logged in user uses saved map offline",
+        "description": "FR10 - A logged in user should have been able to use saved maps offline.\n",
+        "operationId": "useMapOffline",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "username",
+            "in": "path",
+            "description": "The username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "mapID",
+            "in": "path",
+            "description": "Map's ID",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "offlineUse",
+            "in": "query",
+            "description": "Whether the logged in user wants to use a saved map offline",
+            "required": true,
+            "type": "boolean"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/Map_2"
+            }
+          },
+          "500": {
+            "description": "System could not show map offline"
+          }
+        },
+        "security": [
+          {
+            "JWTbearerAuth": []
+          }
+        ]
+      }
+    },
+    "/user/{username}/location": {
+      "post": {
+        "tags": [
+          "loggedInUser"
+        ],
+        "summary": "Logged in user enters new locations in the database",
+        "description": "FR11 - A logged in user should have been able to enter new locations in the database.\n",
+        "operationId": "enterNewLocations",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "username",
+            "in": "path",
+            "description": "The username",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "newLocation",
+            "description": "Location Model",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/newLocation"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "New location registered successfully",
+            "schema": {
+              "$ref": "#/definitions/inline_response_200_2"
+            }
+          },
+          "400": {
+            "description": "Invalid information value(s)"
+          },
+          "500": {
+            "description": "System failed"
+          }
+        },
+        "security": [
+          {
+            "JWTbearerAuth": []
+          }
+        ]
+      }
+    }
+  },
+  "securityDefinitions": {
+    "api_key": {
+      "type": "apiKey",
+      "name": "api_key",
+      "in": "header"
+    },
+    "JWTbearerAuth": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
+    }
+  },
+  "definitions": {
+    "GPSLocation": {
+      "type": "object",
+      "properties": {
+        "enabledLocation": {
+          "type": "boolean"
+        },
+        "willToEnableLocation": {
+          "type": "boolean"
+        }
+      }
+    },
+    "Map": {
+      "type": "object",
+      "properties": {
+        "offlineUse": {
+          "type": "boolean"
+        },
+        "filters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Filters_1"
+          }
+        },
+        "locations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/newLocation"
+          }
+        },
+        "willToSave": {
+          "type": "boolean"
+        },
+        "willToShare": {
+          "type": "boolean"
+        },
+        "isSaved": {
+          "type": "boolean"
+        },
+        "mapID": {
+          "type": "string"
+        }
+      }
+    },
+    "Filters": {
+      "type": "object",
+      "properties": {
+        "transportation": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/useruserIDfilters_transportation"
+          }
+        },
+        "health": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/useruserIDfilters_health"
+          }
+        },
+        "culture": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/useruserIDfilters_culture"
+          }
+        },
+        "entertainment": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/useruserIDfilters_entertainment"
+          }
+        },
+        "finance": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/useruserIDfilters_finance"
+          }
+        }
+      }
+    },
+    "Transportation": {
+      "type": "object",
+      "properties": {
+        "car": {
+          "type": "boolean"
+        },
+        "taxi": {
+          "type": "boolean"
+        },
+        "walking": {
+          "type": "boolean"
+        },
+        "bike": {
+          "type": "boolean"
+        }
+      }
+    },
+    "Health": {
+      "type": "object",
+      "properties": {
+        "hospitals": {
+          "type": "boolean"
+        },
+        "pharmacies": {
+          "type": "boolean"
+        }
+      }
+    },
+    "Culture": {
+      "type": "object",
+      "properties": {
+        "ancient": {
+          "type": "boolean"
+        },
+        "postclassical": {
+          "type": "boolean"
+        },
+        "modernHistory": {
+          "type": "boolean"
+        },
+        "sculpture": {
+          "type": "boolean"
+        },
+        "gallery": {
+          "type": "boolean"
+        },
+        "modernArt": {
+          "type": "boolean"
+        },
+        "science": {
+          "type": "boolean"
+        },
+        "mostPopular": {
+          "type": "boolean"
+        },
+        "citysGems": {
+          "type": "boolean"
+        }
+      }
+    },
+    "Entertainment": {
+      "type": "object",
+      "properties": {
+        "EatingOut": {
+          "type": "boolean"
+        },
+        "partiesConcertsFestivals": {
+          "type": "boolean"
+        },
+        "coffeeDrinks": {
+          "type": "boolean"
+        },
+        "cinemaTheater": {
+          "type": "boolean"
+        }
+      }
+    },
+    "Finance": {
+      "type": "object",
+      "properties": {
+        "bank": {
+          "type": "string"
+        },
+        "ATMs": {
+          "type": "boolean"
+        },
+        "BankBranches": {
+          "type": "boolean"
+        },
+        "exchangeOffices": {
+          "type": "boolean"
+        }
+      }
+    },
+    "Location": {
+      "type": "object",
+      "properties": {
+        "willToRegister": {
+          "type": "boolean"
+        },
+        "locationName": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "category": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Filters_1"
+          }
+        }
+      }
+    },
+    "Trip": {
+      "type": "object",
+      "required": [
+        "destination"
+      ],
+      "properties": {
+        "placeOfResidence": {
+          "type": "string"
+        },
+        "destination": {
+          "type": "string"
+        },
+        "travelDuration": {
+          "type": "integer"
+        },
+        "tripID": {
+          "type": "string"
+        },
+        "currency": {
+          "type": "string",
+          "enum": [
+            "euro",
+            "pounds",
+            "dollars",
+            "yen"
+          ]
+        }
+      }
+    },
+    "TripPlan": {
+      "type": "object",
+      "properties": {
+        "mapItems": {
+          "$ref": "#/definitions/inline_response_200_2"
+        },
+        "tripItems": {
+          "$ref": "#/definitions/basicInfo"
+        },
+        "planID": {
+          "type": "string"
+        }
+      }
+    },
+    "Token": {
+      "type": "object",
+      "properties": {
+        "token": {
+          "type": "string",
+          "description": "JWT token"
+        }
+      }
+    },
+    "User": {
+      "type": "object",
+      "properties": {
+        "username": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        }
+      }
+    },
+    "Feedback": {
+      "type": "object",
+      "properties": {
+        "comment": {
+          "type": "string"
+        },
+        "rate": {
+          "type": "integer"
+        }
+      }
+    },
+    "basicInfo": {
+      "type": "object",
+      "required": [
+        "destination"
+      ],
+      "properties": {
+        "placeOfResidence": {
+          "type": "string"
+        },
+        "destination": {
+          "type": "string"
+        },
+        "travelDuration": {
+          "type": "integer"
+        },
+        "tripID": {
+          "type": "string"
+        },
+        "currency": {
+          "type": "string",
+          "enum": [
+            "euro",
+            "pounds",
+            "dollars",
+            "yen"
+          ]
+        }
+      }
+    },
+    "gpsLocation": {
+      "type": "object",
+      "properties": {
+        "enabledLocation": {
+          "type": "boolean"
+        },
+        "willToEnableLocation": {
+          "type": "boolean"
+        }
+      }
+    },
+    "useruserIDfilters_transportation": {
+      "type": "object",
+      "properties": {
+        "car": {
+          "type": "boolean"
+        },
+        "taxi": {
+          "type": "boolean"
+        },
+        "walking": {
+          "type": "boolean"
+        },
+        "bike": {
+          "type": "boolean"
+        }
+      }
+    },
+    "useruserIDfilters_health": {
+      "type": "object",
+      "properties": {
+        "hospitals": {
+          "type": "boolean"
+        },
+        "pharmacies": {
+          "type": "boolean"
+        }
+      }
+    },
+    "useruserIDfilters_culture": {
+      "type": "object",
+      "properties": {
+        "ancient": {
+          "type": "boolean"
+        },
+        "postclassical": {
+          "type": "boolean"
+        },
+        "modernHistory": {
+          "type": "boolean"
+        },
+        "sculpture": {
+          "type": "boolean"
+        },
+        "gallery": {
+          "type": "boolean"
+        },
+        "modernArt": {
+          "type": "boolean"
+        },
+        "science": {
+          "type": "boolean"
+        },
+        "mostPopular": {
+          "type": "boolean"
+        },
+        "citysGems": {
+          "type": "boolean"
+        }
+      }
+    },
+    "useruserIDfilters_entertainment": {
+      "type": "object",
+      "properties": {
+        "EatingOut": {
+          "type": "boolean"
+        },
+        "partiesConcertsFestivals": {
+          "type": "boolean"
+        },
+        "coffeeDrinks": {
+          "type": "boolean"
+        },
+        "cinemaTheater": {
+          "type": "boolean"
+        }
+      }
+    },
+    "useruserIDfilters_finance": {
+      "type": "object",
+      "properties": {
+        "bank": {
+          "type": "string"
+        },
+        "ATMs": {
+          "type": "boolean"
+        },
+        "BankBranches": {
+          "type": "boolean"
+        },
+        "exchangeOffices": {
+          "type": "boolean"
+        }
+      }
+    },
+    "Filters_1": {
+      "type": "object",
+      "properties": {
+        "transportation": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/useruserIDfilters_transportation"
+          }
+        },
+        "health": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/useruserIDfilters_health"
+          }
+        },
+        "culture": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/useruserIDfilters_culture"
+          }
+        },
+        "entertainment": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/useruserIDfilters_entertainment"
+          }
+        },
+        "finance": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/useruserIDfilters_finance"
+          }
+        }
+      }
+    },
+    "inline_response_200_locations": {
+      "type": "object",
+      "properties": {
+        "willToRegister": {
+          "type": "boolean"
+        },
+        "locationName": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "category": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Filters_1"
+          }
+        }
+      }
+    },
+    "inline_response_200": {
+      "type": "object",
+      "properties": {
+        "offlineUse": {
+          "type": "boolean"
+        },
+        "filters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Filters_1"
+          }
+        },
+        "locations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/inline_response_200_locations"
+          }
+        },
+        "willToSave": {
+          "type": "boolean"
+        },
+        "willToShare": {
+          "type": "boolean"
+        },
+        "isSaved": {
+          "type": "boolean"
+        },
+        "mapID": {
+          "type": "string"
+        }
+      }
+    },
+    "Feeback": {
+      "type": "object",
+      "properties": {
+        "comment": {
+          "type": "string"
+        },
+        "rate": {
+          "type": "integer"
+        }
+      }
+    },
+    "User_1": {
+      "type": "object",
+      "properties": {
+        "username": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        }
+      }
+    },
+    "inline_response_200_1": {
+      "type": "object",
+      "properties": {
+        "token": {
+          "type": "string",
+          "description": "JWT token"
+        }
+      }
+    },
+    "TripPlan_1": {
+      "type": "object",
+      "properties": {
+        "mapItems": {
+          "$ref": "#/definitions/inline_response_200"
+        },
+        "tripItems": {
+          "$ref": "#/definitions/basicInfo"
+        },
+        "planID": {
+          "type": "string"
+        }
+      }
+    },
+    "TripPlan_2": {
+      "type": "object",
+      "properties": {
+        "mapItems": {
+          "$ref": "#/definitions/inline_response_200"
+        },
+        "tripItems": {
+          "$ref": "#/definitions/basicInfo"
+        },
+        "planID": {
+          "type": "string"
+        }
+      }
+    },
+    "Map_1": {
+      "type": "object",
+      "properties": {
+        "offlineUse": {
+          "type": "boolean"
+        },
+        "filters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Filters_1"
+          }
+        },
+        "locations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/inline_response_200_locations"
+          }
+        },
+        "willToSave": {
+          "type": "boolean"
+        },
+        "willToShare": {
+          "type": "boolean"
+        },
+        "isSaved": {
+          "type": "boolean"
+        },
+        "mapID": {
+          "type": "string"
+        }
+      }
+    },
+    "Map_2": {
+      "type": "object",
+      "properties": {
+        "offlineUse": {
+          "type": "boolean"
+        },
+        "filters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Filters_1"
+          }
+        },
+        "locations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/inline_response_200_locations"
+          }
+        },
+        "willToSave": {
+          "type": "boolean"
+        },
+        "willToShare": {
+          "type": "boolean"
+        },
+        "isSaved": {
+          "type": "boolean"
+        },
+        "mapID": {
+          "type": "string"
+        }
+      }
+    },
+    "newLocation": {
+      "type": "object",
+      "properties": {
+        "willToRegister": {
+          "type": "boolean"
+        },
+        "locationName": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "category": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Filters_1"
+          }
+        }
+      }
+    },
+    "inline_response_200_2": {
+      "type": "object",
+      "properties": {
+        "offlineUse": {
+          "type": "boolean"
+        },
+        "filters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Filters_1"
+          }
+        },
+        "locations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/newLocation"
+          }
+        },
+        "willToSave": {
+          "type": "boolean"
+        },
+        "willToShare": {
+          "type": "boolean"
+        },
+        "isSaved": {
+          "type": "boolean"
+        },
+        "mapID": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
