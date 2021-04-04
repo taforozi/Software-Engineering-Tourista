@@ -27,7 +27,7 @@ Additionally, three files are mentioned as follows:
 Node-RED flows of the application can be found in [tourista-flows.json](tourista-flows.json) file. You can download it as a json file and drag-and-drop it in Node-RED platform to see our job.
   
 ##  Team members
-_Find us on LinkedIn_
+Find us on LinkedIn:
 
 [Aforozi Thomais](https://www.linkedin.com/in/thomais-aforozi-64076b201/)\
 [Giannokosta Georgia](https://www.linkedin.com/in/geogiannokosta/)\
