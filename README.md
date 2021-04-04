@@ -26,3 +26,14 @@ Additionally, three files are mentioned as follows:
 ## Node-RED
 Node-RED flows of the application can be found in [tourista-flows.json](tourista-flows.json) file. You can download it as a json file and drag-and-drop it in Node-RED platform to see our job.
   
+##  Team members
+_Find us on LinkedIn_
+
+[Aforozi Thomais](https://www.linkedin.com/in/thomais-aforozi-64076b201/)\
+[Giannokosta Georgia](https://www.linkedin.com/in/geogiannokosta/)\
+[Iatropoulou Zafeiria](https://www.linkedin.com/in/zafeiria-iatropoulou-78270619a/)\
+[Kakouri Antigone](https://www.linkedin.com/in/antigoni-kakouri/)
+
+## Contact
+If there are any questions, feel free to [contact me](mailto:thomi199822@gmail.com?subject=[GitHub]%20Source%20Han%20Sans). 
+
