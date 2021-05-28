@@ -10,7 +10,7 @@ Me and my team decided to develop the **Tourista App**, a web application that c
 The Functional and Non-Functional Requirements of the application can be found in [Tourista_FunctionalRequirements.txt](Tourista_FunctionalRequirements.txt) and [Tourista_NonFunctionalRequirements.txt](Tourista_NonFunctionalRequirements.txt) files respectively.
 
 ## GUI
-This folder contains Graphical User Interface mockups of Tourista App that we created on Figma platform.
+This folder contains the Graphical User Interface mockups of Tourista App that we created on Figma platform.
 
 ## User Stories
 This folder contains 10 user stories in Gherkin language, in order to provide the necessary information about the app's functionality.
